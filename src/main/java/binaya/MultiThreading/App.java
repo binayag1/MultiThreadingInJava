@@ -7,7 +7,7 @@ public class App
     	Thread t1=new Thread(
     			()->{
     				for(int i=1;i<=5;i++) {
-    					System.out.println("Hello from Thread 1");
+    					System.out.println("Hello from Thread 1. Priority: "+Thread.currentThread().getPriority());
     					try {
 							Thread.sleep(1000);
 						} catch (InterruptedException e) {
@@ -15,13 +15,13 @@ public class App
 							e.printStackTrace();
 						}
     				}
-    			}
+    			},"thread1"
     			
     			);
     	Thread t2=new Thread(
     			()->{
     				for(int i=1;i<=5;i++) {
-    					System.out.println("Hello from Thread 2");
+    					System.out.println("Hello from Thread 2. Priority: "+Thread.currentThread().getPriority());
     					try {
 							Thread.sleep(1000);
 						} catch (InterruptedException e) {
@@ -29,9 +29,13 @@ public class App
 							e.printStackTrace();
 						}
     				}
-    			}
+    			},"thread2"
     			
-    			);
+    			);	
+    	System.out.println(t1.getName());
+    	System.out.println(t2.getName());
+    	t1.setPriority(1);
+    	t2.setPriority(10);
     	t1.start();
     	try {
 			Thread.sleep(10);
