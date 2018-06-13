@@ -6,4 +6,8 @@
 	Build id: 20180405-1200
 
 # In this Commit: 
-	There are three classes named App, B and C. In class B and C, a method is written which display the message five times. To understand how thread can work, Thread.sleep() has been used. Which delays the execution of thread by 1000 millisecond. We can have the look of how thred gets executed. In class App, object of B and C has been created. Eventually, method are called. The process of execution will be in sequential order which mean first printMessage() of class B will executed 5 times and printMessage() of class C will be executed 5 times. But during the execution each loop execution is delayed by 1 second. 
+	There are three classes named App, B and C. Thread class has been extended in class B and C. 
+	Thread class provides run() method, which we can implement in our own way. 
+	In-App class objects of B and C has been created and objects are started by using start() method.
+	As soon as we start a thread we can see the execution process as sometimes message from B gets displayed
+	and a sometime message from C gets displayed. This demonstrates the execution process of two unique threads. 

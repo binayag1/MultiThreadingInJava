@@ -10,14 +10,14 @@ public class App
     {
     	B b=new B();
     	C c=new C();
-    	b.printMessage();
-    	c.printMessage();
+    	b.start();
+    	c.start();
     	
         
     }
 }
-class B{
-	public void printMessage() {
+class B extends Thread{
+	public void run() {
 		for (int i = 1; i <=5; i++) {
 			System.out.println("Hello from B");
 			try {
@@ -29,8 +29,8 @@ class B{
 		}
 	}
 }
-class C{
-	public void printMessage() {
+class C extends Thread{
+	public void run() {
 		for (int i = 1; i <=5; i++) {
 			System.out.println("Hello from C");
 			try {
