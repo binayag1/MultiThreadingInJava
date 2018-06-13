@@ -10,13 +10,21 @@ public class App
     {
     	B b=new B();
     	C c=new C();
-    	b.start();
-    	c.start();
+    	Thread t1=new Thread(b);
+    	Thread t2=new Thread(c);
+    	t1.start();
+    	try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	t2.start();
     	
         
     }
 }
-class B extends Thread{
+class B implements Runnable{
 	public void run() {
 		for (int i = 1; i <=5; i++) {
 			System.out.println("Hello from B");
@@ -29,7 +37,7 @@ class B extends Thread{
 		}
 	}
 }
-class C extends Thread{
+class C implements Runnable{
 	public void run() {
 		for (int i = 1; i <=5; i++) {
 			System.out.println("Hello from C");

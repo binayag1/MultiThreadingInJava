@@ -6,8 +6,8 @@
 	Build id: 20180405-1200
 
 # In this Commit: 
-	There are three classes named App, B and C. Thread class has been extended in class B and C. 
-	Thread class provides run() method, which we can implement in our own way. 
-	In-App class objects of B and C has been created and objects are started by using start() method.
-	As soon as we start a thread we can see the execution process as sometimes message from B gets displayed
-	and a sometime message from C gets displayed. This demonstrates the execution process of two unique threads. 
+	In previous example, class Thread was used to achieve multithreading. This time the example has been used 
+	Runnable Interface. Runnable Interface has only one method which is Run. 
+	In Thread class we used, thread.start() method to start thread but this time we will implements 
+	Runnable Interface in both of the class and will create two thread in App class. 
+	But this time we will create object of Runnable and pass that to the Thread. 
